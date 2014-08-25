@@ -15,10 +15,12 @@
 	  @$dom->loadHTML($wiki_page);
 	  $xpath = new DOMXpath($dom);
 	  
-	  $table = $xpath->query("//*[@id='mw-content-text']/table[1]//td");
-
-	  print_r($table);
-
+	  $table = $xpath->query("//*[@id='mw-content-text']/table[1]/tr");
+	  
+	  foreach ($table as $inode => $row) {
+	  	echo '<pre>';
+	  	print_r($row);
+      }
   ?>
 </body>
 </html>
