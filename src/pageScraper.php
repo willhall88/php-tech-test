@@ -15,9 +15,10 @@ class PageScraper
       foreach ($this->xml->xpath($xpath_query) as $count => $row) {
           $cells = $row->td;
           $title_cell = $row->th->i->a;
+          $formatted_revenue = str_replace(array('$', ','), '' , $cells[1]);
           $films[] = array(
           	'title' => (String)$title_cell,
-            'revenue' => (String)$cells[1],
+            'revenue' => (Integer)$formatted_revenue,
             'year' => (String)$cells[2],
           );
       }
