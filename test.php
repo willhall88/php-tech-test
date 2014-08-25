@@ -13,9 +13,10 @@
 	  curl_setopt($curl_handler, CURLOPT_RETURNTRANSFER, true);
 	  $wiki_page = curl_exec($curl_handler);
 
-	  $films = new PageScraper($wiki_page);
-	  $film_table = $films->getFilms();
+	  $scraped_page = new PageScraper($wiki_page);
+	  $film_table = $scraped_page->getFilms();
 
+	  echo '<pre>';
 	  print_r($film_table);
 	  
   ?>
