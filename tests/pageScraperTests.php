@@ -23,4 +23,12 @@ class PageScraperTest extends \PHPUnit_Framework_TestCase
       $this->assertEquals($first_element['revenue'], "$2,787,965,087");
       $this->assertEquals($first_element['year'], "2009");
     }
+
+    public function testFilmTitleIsExtracted()
+    {	
+    	$films = $this->film_page->getFilms();
+    	
+    	$first_element = $films[0];
+      $this->assertEquals($first_element['title'], "Avatar");
+    }
 }

@@ -14,7 +14,9 @@ class PageScraper
       
       foreach ($this->xml->xpath($xpath_query) as $count => $row) {
           $cells = $row->td;
+          $title_cell = $row->th->i->a;
           $films[] = array(
+          	'title' => (String)$title_cell,
             'revenue' => (String)$cells[1],
             'year' => (String)$cells[2],
           );
