@@ -1,0 +1,10 @@
+html { 
+	background: #DC143C; 
+	text-align: center; 
+	font-family: 'Helvetica'; 
+}
+
+img {
+	border-radius: 20px;
+	margin: 30px;
+}

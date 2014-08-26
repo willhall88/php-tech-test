@@ -12,14 +12,15 @@
     	$films = array();
     	$xpath_query = '//*[@id="mw-content-text"]/table[1]/tr';
       
-      foreach ($this->xml->xpath($xpath_query) as $count => $row) {
-          $cells = $row->td;
-      
-          $films[] = array(
-          	'title' => $this->getTitle($row),
-            'revenue' => $this->formatCurrency($cells[1]),
-            'year' => (String)$cells[2],
-          );
+      foreach ($this->xml->xpath($xpath_query) as $count => $row) 
+      {
+        $cells = $row->td;
+    
+        $films[] = array(
+        	'title' => $this->getTitle($row),
+          'revenue' => $this->formatCurrency($cells[1]),
+          'year' => (Integer)$cells[2],
+        );
       }
 
       array_shift($films);
