@@ -1,7 +1,7 @@
 <?php
-require_once "src/pageScraper.php";
-class PageScraperTest extends \PHPUnit_Framework_TestCase
-{
+  require_once "src/pageScraper.php";
+  class PageScraperTest extends \PHPUnit_Framework_TestCase
+    {
     
     function __construct()
     {
@@ -20,7 +20,7 @@ class PageScraperTest extends \PHPUnit_Framework_TestCase
     	$films = $this->film_page->getFilms();
     	
     	$first_element = $films[0];
-      $this->assertEquals($first_element['revenue'], "2787965087");
+      $this->assertEquals($first_element['revenue'], "2.787965087");
       $this->assertEquals($first_element['year'], "2009");
     }
 
@@ -31,4 +31,5 @@ class PageScraperTest extends \PHPUnit_Framework_TestCase
     	$first_element = $films[0];
       $this->assertEquals($first_element['title'], "Avatar");
     }
-}
+  }
+?>

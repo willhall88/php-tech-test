@@ -1,6 +1,6 @@
 <?php
-class PageScraper
-{
+  class PageScraper
+  {
     
     function __construct($string)
     {
@@ -28,8 +28,9 @@ class PageScraper
 
     private function formatCurrency($currency)
     {
-    	$formatted_currency = (Integer)str_replace(array('$', ','), '' , $currency);
-    	return $formatted_currency;
+    	$remove_characters = (Integer)str_replace(array('$', ','), '' , $currency);
+    	$formatted_currency = ($remove_characters/1000000000); 
+      return $formatted_currency;
     }
 
     private function getTitle($row)
@@ -38,4 +39,5 @@ class PageScraper
     	return $title;
     }
 
-}
+  }
+?>
